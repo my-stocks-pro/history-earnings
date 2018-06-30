@@ -1,7 +1,9 @@
+from classRequest import Requester
 
 
-class Shutterstock:
+class Earnings(Requester):
     def __init__(self):
+        Requester.__init__(self)
         self.urls = [
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=25_a_day&sort=desc&sorted_by=count&per_page=20",
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=on_demand&sort=desc&sorted_by=count&per_page=20",

@@ -1,15 +1,16 @@
-from classServerAPI import ServerAPI
+from flask import Flask, render_template
+from flask_cors import CORS
+from classEarnings import Earnings
+
+server = Flask(__name__)
+cors = CORS(server, resources={r"/api/*": {"origins": "*"}})
 
 
-def main():
-    #TODO query url date
+@server.route("/history/earnings", methods=['GET'])
+def range():
+    return "test app..."
 
-    server = ServerAPI()
-    server.init_routing()
-
-    server.api.run(host='0.0.0.0', port=8003)
-
-    pass
 
 if __name__ == '__main__':
-    main()
+    earnings = Earnings()
+    server.run(host='127.0.0.1', port=8003)
