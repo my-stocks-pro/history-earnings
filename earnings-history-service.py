@@ -1,16 +1,26 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash
 from flask_cors import CORS
 from classEarnings import Earnings
 
-server = Flask(__name__)
-cors = CORS(server, resources={r"/api/*": {"origins": "*"}})
+app = Flask(__name__)
+# app.debug = True
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
-@server.route("/history/earnings", methods=['GET'])
-def range():
-    return "test app..."
+@app.route("/history/earnings", methods=['GET'])
+def get_data():
+    query = request.args
+    earnings.start = query.get('start')
+    earnings.end = query.get('end')
+    earnings.get()
+    return ""
+
+# @server.route("/history/earnings", methods=['POS'])
+# def range():
+#     return
 
 
 if __name__ == '__main__':
     earnings = Earnings()
-    server.run(host='127.0.0.1', port=8003)
+    app.run(host='127.0.0.1', port=8003)
+

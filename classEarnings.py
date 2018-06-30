@@ -1,16 +1,23 @@
 from classRequest import Requester
+import json
 
 
 class Earnings(Requester):
     def __init__(self):
         Requester.__init__(self)
+        self.start = ""
+        self.end = ""
         self.urls = [
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=25_a_day&sort=desc&sorted_by=count&per_page=20",
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=on_demand&sort=desc&sorted_by=count&per_page=20",
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=enhanced&sort=desc&sorted_by=count&per_page=20",
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=single_image_and_other&sort=desc&sorted_by=count&per_page=20"]
 
-    def get_earnings(self):
+    def get(self):
+        # print(query_string)
+        # date_range = json.loads(query_string.decode('utf-8'))
+        print(self.start)
+        print(self.end)
         pass
         # for url in self.urls:
         #     page = 1
