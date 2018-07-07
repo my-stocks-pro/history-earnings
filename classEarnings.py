@@ -11,6 +11,12 @@ class Earnings(Requester):
         Requester.__init__(self)
         self.start = ""
         self.end = ""
+        self.map = ""
+        self.url_map = "https://submit.shutterstock.com/api/user/downloads/map"
+        self.categories = {"25_a_day": "subscription",
+                           "on_demand": "onDemand",
+                           "enhanced": "enhanced",
+                           "single_image_and_other": "single&other"}
         self.urls = [
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=25_a_day&sort=desc&sorted_by=count&per_page=20",
             "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=on_demand&sort=desc&sorted_by=count&per_page=20",
@@ -37,11 +43,13 @@ class Earnings(Requester):
                         # self.to_logger("empty url ->" + tmp_url)
                         break
                     # self.to_logger(tmp_url)
+                    map = self.get_response(self.url_map)
+                    self.map = json.loads(map.content)
                     print(tmp_url)
                     page += 1
                     try:
                         df = pd.read_html(r.content)
-                        self.processing_dataframe(df)
+                        self.processing_dataframe(df, tmp_url)
                     except ValueError:
                         # self.to_logger(ValueError)
                         print(ValueError)
@@ -50,5 +58,26 @@ class Earnings(Requester):
                     print("error in request")
                     # self.to_logger("error in request")
 
-    def processing_dataframe(self, df):
-        pass
+    def processing_dataframe(self, df, tmp_url):
+        df = df[0]
+        list_id = df[df.columns[1]].tolist()  # ID
+        list_downloads = df[df.columns[3]].tolist()  # Downloads
+        category = self.get_category(tmp_url)
+        for idi, dow in zip(list_id, list_downloads):
+            location = self.get_location(idi)
+            print(idi, dow, location, category)
+
+    def get_category(self, url):
+        for category in self.categories.keys():
+            if category in url:
+                return self.categories.get(category)
+
+    def get_location(self, idi):
+        for location in self.map:
+            media_id = location.get('media_id')
+            if str(media_id) == idi:
+                country = location.get('country')
+                city = location.get('city')
+                if country is None and city is not None:
+                    country = city
+                return "{}/{}".format(country, city)
