@@ -1,0 +1,598 @@
+2018-07-07 21:03:32,560 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:04:44,243 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:04:44] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-07 21:04:44,277 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:04:44] "GET /favicon.ico HTTP/1.1" 404 -
+2018-07-07 21:05:40,767 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:06:49,773 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:06:49] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-07 21:08:48,537 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:09:33,800 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:09:33] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-07 21:10:58,750 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:11:15,282 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 55, in post_request
+    requests.post(url, data=body)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-07-07 21:11:15,375 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:11:15] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:16:49,234 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:17:08,404 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 55, in post_request
+    requests.post(url, data=df)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-07-07 21:17:08,440 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:17:08] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:17:46,556 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:17:53,938 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 55, in post_request
+    requests.post(url, params=df)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-07-07 21:17:53,981 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:17:53] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:19:13,476 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:19:27,990 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 55, in post_request
+    requests.post(url, params=df)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-07-07 21:19:28,031 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:19:28] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:23:28,372 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:23:50,440 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 51, in post_request
+    body = json.loads(df)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2018-07-07 21:23:51,174 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:23:51] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:24:03,876 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:24:15,543 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 51, in post_request
+    body = json.loads(df)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2018-07-07 21:24:15,566 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:24:15] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:25:06,029 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:25:15,554 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 51, in post_request
+    body = json.loads(df)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2018-07-07 21:25:15,578 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:25:15] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:25:27,464 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:25:31,236 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 51, in post_request
+    body = json.loads(df)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2018-07-07 21:25:31,238 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:25:31] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:26:00,075 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:26:24,500 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 51, in post_request
+    body = json.loads(df)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/json/__init__.py", line 348, in loads
+    'not {!r}'.format(s.__class__.__name__))
+TypeError: the JSON object must be str, bytes or bytearray, not 'dict'
+2018-07-07 21:26:24,523 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:26:24] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:27:46,315 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-07 21:27:52,536 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 445, in send
+    timeout=timeout
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/util/retry.py", line 367, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 384, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/urllib3/connectionpool.py", line 380, in _make_request
+    httplib_response = conn.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 1331, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 34, in get
+    self.get_by_date(date)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 54, in get_by_date
+    self.processing_dataframe(df, tmp_url)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 70, in processing_dataframe
+    self.post(idi, download,  country, city, category)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 94, in post
+    self.post_request(df)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classRequest.py", line 55, in post_request
+    requests.post(url, data=body)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 112, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/api.py", line 58, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 512, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/sessions.py", line 622, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/requests/adapters.py", line 495, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+2018-07-07 21:27:52,564 - werkzeug - INFO - 127.0.0.1 - - [07/Jul/2018 21:27:52] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-07 21:28:41,291 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)

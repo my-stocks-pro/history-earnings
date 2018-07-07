@@ -4,12 +4,11 @@ from classEarnings import Earnings
 import pandas as pd
 
 
+app = Flask(__name__)
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-# app = Flask(__name__)
-# cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-#
-#
-# @app.route("/history/earnings", methods=['GET'])
+
+@app.route("/history/earnings", methods=['GET'])
 def get_data():
     # query = request.args
     # earnings.start = query.get('start')
@@ -20,10 +19,8 @@ def get_data():
     return ""
 
 
-
-
 if __name__ == '__main__':
     earnings = Earnings()
     # test()
-    get_data()
-    # app.run(host='127.0.0.1', port=8003)
+    # get_data()
+    app.run(host='127.0.0.1', port=8003)

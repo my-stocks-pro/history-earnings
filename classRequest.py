@@ -49,7 +49,7 @@ class Requester:
 
     def post_request(self, df):
         body = json.dumps(df)
-        print(body)
+        print(df)
         # TODO need test...
-        url = "127.0.0.1/"
-        requests.get(url, body=body)
+        url = "http://127.0.0.1:8001/data/psql/earnings"
+        requests.post(url, data=body)
