@@ -20,31 +20,35 @@ class Earnings(Requester):
     def date_list(self):
         return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
 
-    def date_range(self):
+    def get(self):
         dl = self.date_list()
         for date in dl:
-            self.get_by_dete(date)
+            self.get_by_date(date)
 
-    def get_by_dete(self, date):
-        pass
-
-    def get(self):
-        print(self.date_range())
+    def get_by_date(self, date):
         for url in self.urls:
             page = 1
             while True:
-                tmp_url = url.format(str(page), str(date_current))
+                tmp_url = url.format(str(page), str(date.strftime('%Y-%m-%d')))
                 try:
                     r = self.get_response(tmp_url)
+                    if int(r.url[r.url.index("=") + 1:r.url.index("&")]) < page:
+                        print("empty url ->" + tmp_url)
+                        # self.to_logger("empty url ->" + tmp_url)
+                        break
+                    # self.to_logger(tmp_url)
+                    print(tmp_url)
+                    page += 1
+                    try:
+                        df = pd.read_html(r.content)
+                        self.processing_dataframe(df)
+                    except ValueError:
+                        # self.to_logger(ValueError)
+                        print(ValueError)
+                        break
                 except():
-                    self.to_logger("error in request")
-                if int(r.url[r.url.index("=") + 1:r.url.index("&")]) < page:
-                    self.to_logger("empty url ->" + tmp_url)
-                    break
-                self.to_logger(tmp_url)
-                page += 1
-                try:
-                    df = pd.read_html(r.content)
-                except ValueError:
-                    print(ValueError)
-                    break
+                    print("error in request")
+                    # self.to_logger("error in request")
+
+    def processing_dataframe(self, df):
+        pass

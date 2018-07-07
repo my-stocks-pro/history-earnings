@@ -10,8 +10,7 @@ class NetworkError(RuntimeError):
 
 class Requester:
     def __init__(self):
-        # self.cookies = browser_cookie3.chrome()
-        self.cookies = {"session": "s%3AFLsDQ0KkRmbbHJSFijJz_5VxQPCQI7Ol.t5LQWhFeOPA9qV2S0fqa6JBsFB0Rq%2BrxMDPc1URXyHE"}
+        self.cookies = {"session": "s%3ACH2H5DdpB6MzmSsDieZE7UvVMQPehBCt.1z%2B36%2FhnbFqxO7XKSXFCg1VuMhuFT%2B47W4%2B05gVV67k"}
         print("LOGIN to Shutterstock...")
 
     def retryer(max_retries=10, timeout=5):
