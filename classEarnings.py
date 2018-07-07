@@ -1,4 +1,5 @@
 from classRequest import Requester
+from classLogger import Logger
 import json
 import datetime
 from dateutil.relativedelta import relativedelta
@@ -6,9 +7,10 @@ from dateutil.rrule import rrule, MONTHLY
 import pandas as pd
 
 
-class Earnings(Requester):
+class Earnings(Requester, Logger):
     def __init__(self):
         Requester.__init__(self)
+        Logger.__init__(self, "earnings-history-service")
         self.start = ""
         self.end = ""
         self.map = ""
@@ -43,8 +45,8 @@ class Earnings(Requester):
                         # self.to_logger("empty url ->" + tmp_url)
                         break
                     # self.to_logger(tmp_url)
-                    map = self.get_response(self.url_map)
-                    self.map = json.loads(map.content)
+                    r_map = self.get_response(self.url_map)
+                    self.map = json.loads(r_map.content)
                     print(tmp_url)
                     page += 1
                     try:
@@ -63,9 +65,9 @@ class Earnings(Requester):
         list_id = df[df.columns[1]].tolist()  # ID
         list_downloads = df[df.columns[3]].tolist()  # Downloads
         category = self.get_category(tmp_url)
-        for idi, dow in zip(list_id, list_downloads):
-            location = self.get_location(idi)
-            print(idi, dow, location, category)
+        for idi, download in zip(list_id, list_downloads):
+            country, city = self.get_location(idi)
+            self.post(idi, download,  country, city, category)
 
     def get_category(self, url):
         for category in self.categories.keys():
@@ -80,4 +82,13 @@ class Earnings(Requester):
                 city = location.get('city')
                 if country is None and city is not None:
                     country = city
-                return "{}/{}".format(country, city)
+                return country, city
+        return None, None
+
+    def post(self, idi, download,  country, city, category):
+        df = {"idi": idi,
+              "download": download,
+              "category": category,
+              "country": country,
+              "city": city}
+        self.post_request(df)

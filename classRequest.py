@@ -2,6 +2,7 @@ from __future__ import print_function
 import requests
 # import browser_cookie3
 import time
+import json
 
 
 class NetworkError(RuntimeError):
@@ -45,3 +46,10 @@ class Requester:
 
     def get_request(self):
         pass
+
+    def post_request(self, df):
+        body = json.dumps(df)
+        print(body)
+        # TODO need test...
+        url = "127.0.0.1/"
+        requests.get(url, body=body)
