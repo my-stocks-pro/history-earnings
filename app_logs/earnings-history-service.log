@@ -1,0 +1,977 @@
+2018-07-21 16:55:37,152 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 16:56:56,886 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 16:56:56] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 16:56:57,033 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 16:56:57] "GET /favicon.ico HTTP/1.1" 404 -
+2018-07-21 17:05:18,598 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:05:47,801 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:05:47] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 17:06:52,799 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:09:46,509 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:10:13,716 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:51:11,540 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:51:15,645 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:51:15] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 17:51:58,101 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 17:51:58,208 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:51:58] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 17:52:16,339 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 17:52:16,342 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:52:16] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 17:52:34,867 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 17:52:34,869 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:52:34] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 17:52:51,485 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:52:55,114 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 17:52:55,133 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:52:55] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 17:53:40,878 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:53:45,772 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:53:45] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 404 -
+2018-07-21 17:53:56,544 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 17:54:00,794 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 17:54:00,798 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 17:54:00] "GET /history/earnings?start=2018-06-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 18:02:51,351 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:02:53,921 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:02:53] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:03:25,539 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:03:27,834 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:03:27] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:03:56,454 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:03:59,589 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:03:59] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:04:51,878 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:04:51] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:05:14,596 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:05:14] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:05:22,128 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:05:25,728 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:05:25] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:06:49,318 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:06:49] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:09:01,410 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:09:01] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:09:40,853 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:09:43,118 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:09:43] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:11:08,145 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:11:10,184 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:11:10] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:11:45,206 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:11:45] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:11:50,522 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:12:04,580 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:12:04] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:14:11,313 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:14:13,811 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:14:13] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:14:25,365 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:14:28,248 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:14:28] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:16:26,912 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:16:26,935 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:16:26] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:17:01,489 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:17:01,490 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:17:01] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:18:29,479 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:19:51,656 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:19:51,675 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:19:51] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:20:57,676 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:20:57] "GET /history/earnings?start=2018-05-01 HTTP/1.1" 200 -
+2018-07-21 18:21:32,450 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:21:32] "GET /history/earnings?start=2018-05-01&end=2018-06-30 HTTP/1.1" 200 -
+2018-07-21 18:21:42,716 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:21:44,523 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:21:44,541 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:21:44] "GET /history/earnings?start=2018-05-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 18:21:58,934 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:21:58] "GET /history/earnings?start=2018-05-01 HTTP/1.1" 200 -
+2018-07-21 18:22:09,779 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:22:09,779 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:22:09] "GET /history/earnings?start=2018-05-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 18:23:10,770 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:23:10,771 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:23:10] "GET /history/earnings?start=2018-05-01&end=2018-06-30 HTTP/1.1" 500 -
+2018-07-21 18:24:35,895 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:24:35] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:24:46,559 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:24:53,009 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:24:53] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:25:02,258 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:25:02] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 18:25:35,919 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:25:38,050 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:25:38,067 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:25:38] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:26:16,001 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:26:18,617 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:26:18,638 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:26:18] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:26:36,385 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:26:39,372 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 21, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:26:39,383 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:26:39] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:30:15,602 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:30:15] "GET /history/approved?start=2018-06-01&end=2018-07-01 HTTP/1.1" 404 -
+2018-07-21 18:32:49,876 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:32:49] "GET /history/approved?end=2018-07-01&start=2018-06-01 HTTP/1.1" 404 -
+2018-07-21 18:33:13,442 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:33:32,764 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:33:32,788 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:33:32] "GET /history/earnings?end=2018-07-01&start=2018-06-01 HTTP/1.1" 500 -
+2018-07-21 18:34:09,094 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask_cors/extension.py", line 161, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py", line 18, in get_data
+    earnings.get()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 24, in get
+    dl = self.date_list()
+  File "/Users/orizhiy/PycharmProjects/earnings-history-service/classEarnings.py", line 21, in date_list
+    return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/dateutil/rrule.py", line 435, in __init__
+    dtstart = datetime.datetime.fromordinal(dtstart.toordinal())
+AttributeError: 'str' object has no attribute 'toordinal'
+2018-07-21 18:34:09,095 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:34:09] "GET /history/earnings?end=2018-07-01&start=2018-06-01 HTTP/1.1" 500 -
+2018-07-21 18:42:58,149 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 18:42:58,241 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:42:58] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:43:53,759 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 18:43:53,762 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:43:53] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:43:53,787 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 18:43:53,787 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:43:53] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 18:44:02,306 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 18:44:08,183 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 18:44:08,203 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 18:44:08] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:06:15,676 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:06:16,715 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:06:16,734 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:06:16] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:06:16,883 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:06:16,884 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:06:16] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:08:39,222 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:08:48,405 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:08:48,425 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:08:48] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:09:59,896 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:10:13,033 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:10:13,054 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:10:13] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:10:23,004 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:10:23,006 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:10:23] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:10:44,353 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:10:47,694 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:10:47,701 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:10:47] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:11:14,871 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:11:20,023 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 59, in _run_wsgi_app
+    return _run_wsgi_app(*args)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:11:20,044 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:11:20] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:11:34,327 - flask.app - ERROR - Exception on /history/earnings [GET]
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1816, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1831, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1982, in make_response
+    reraise(TypeError, new_error, sys.exc_info()[2])
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/_compat.py", line 34, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/flask/app.py", line 1974, in make_response
+    rv = self.response_class.force_type(rv, request.environ)
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/wrappers.py", line 921, in force_type
+    response = BaseResponse(*_run_wsgi_app(response, environ))
+  File "/Users/orizhiy/PycharmProjects/earningsHistoryServiceVENV/lib/python3.6/site-packages/werkzeug/test.py", line 923, in run_wsgi_app
+    app_rv = app(environ, start_response)
+TypeError: 'int' object is not callable
+The view function did not return a valid response. The return type must be a string, tuple, Response instance, or WSGI callable, but it was a int.
+2018-07-21 19:11:34,329 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:11:34] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:13:10,734 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:13:10,753 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:13:11,427 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:13:11,491 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:13:14,218 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:13:14,270 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2018-07-21 19:13:14,273 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2018-07-21 19:13:14,274 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2018-07-21 19:13:14,316 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2018-07-21 19:13:14,463 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2018-07-21 19:13:14,595 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:13:14] "GET /history/earnings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2018-07-21 19:14:01,336 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:14:01,338 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:14:01,912 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:14:01,955 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:14:03,814 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:14:03] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:14:25,279 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:14:25] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:14:59,014 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:14:59,016 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:14:59,595 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:14:59,667 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:15:02,848 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:15:02] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:15:17,742 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:15:17,743 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:15:18,331 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:15:18,346 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:15:20,398 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:15:20] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:18:08,221 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:18:08,223 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:18:08,898 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:18:08,928 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:18:22,707 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:18:22] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:19:02,815 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:19:02,816 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:19:03,458 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:19:03,492 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:19:07,529 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:19:07] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:19:42,906 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:19:42,907 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:19:43,558 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:19:43,603 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:19:47,860 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:19:47] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:20:31,627 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:20:31,628 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:20:32,298 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:20:32,322 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:20:39,512 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:20:39,513 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:20:40,091 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:20:40,103 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:20:45,825 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:20:45] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:20:54,009 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:20:54,011 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:20:55,453 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:20:55,471 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:24:31,467 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:24:31,471 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:24:33,824 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:24:33,875 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:25:22,025 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:25:22,027 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:25:23,375 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:25:23,460 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:26:02,267 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:26:02] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-21 19:26:34,871 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:26:34,873 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:26:37,019 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:26:37,066 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:31:51,489 - werkzeug - INFO -  * Detected change in '/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py', reloading
+2018-07-21 19:31:51,628 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:31:55,068 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:31:55,110 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:33:11,884 - werkzeug - INFO -  * Detected change in '/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py', reloading
+2018-07-21 19:33:12,036 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:33:15,372 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:33:15,407 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:34:21,433 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:34:21,437 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:34:23,013 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:34:23,115 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:34:53,862 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:53] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-21 19:34:53,890 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:53] "GET /history/earnings?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2018-07-21 19:34:53,891 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:53] "GET /history/earnings?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2018-07-21 19:34:53,893 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:53] "GET /history/earnings?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+2018-07-21 19:34:53,966 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:53] "GET /history/earnings?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2018-07-21 19:34:54,044 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:54] "GET /history/earnings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2018-07-21 19:34:54,223 - werkzeug - INFO - 127.0.0.1 - - [21/Jul/2018 19:34:54] "GET /history/earnings?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2018-07-21 19:35:39,044 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:35:39,048 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:35:40,393 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:35:40,438 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-21 19:37:22,004 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-21 19:37:22,008 - werkzeug - INFO -  * Restarting with stat
+2018-07-21 19:37:23,400 - werkzeug - WARNING -  * Debugger is active!
+2018-07-21 19:37:23,430 - werkzeug - INFO -  * Debugger PIN: 112-952-218

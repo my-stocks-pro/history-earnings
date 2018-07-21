@@ -1,43 +1,39 @@
 from classRequest import Requester
 from classLogger import Logger
-import json
-import datetime
-from dateutil.relativedelta import relativedelta
-from dateutil.rrule import rrule, MONTHLY
+from classConfiger import Configer
+from dateutil.rrule import rrule, MONTHLY, DAILY
 import pandas as pd
 
 
-class Earnings(Requester, Logger):
-    def __init__(self):
-        Requester.__init__(self)
-        Logger.__init__(self, "earnings-history-service")
-        self.start = ""
-        self.end = ""
-        self.map = ""
-        self.url_map = "https://submit.shutterstock.com/api/user/downloads/map"
-        self.categories = {"25_a_day": "subscription",
-                           "on_demand": "onDemand",
-                           "enhanced": "enhanced",
-                           "single_image_and_other": "single&other"}
-        self.urls = [
-            "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=25_a_day&sort=desc&sorted_by=count&per_page=20",
-            "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=on_demand&sort=desc&sorted_by=count&per_page=20",
-            "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=enhanced&sort=desc&sorted_by=count&per_page=20",
-            "https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category=single_image_and_other&sort=desc&sorted_by=count&per_page=20"]
+class Earnings(Requester, Logger, Configer):
+    def __init__(self, conf_path, log_path):
+        Configer.__init__(self, conf_path)
+        Requester.__init__(self, self.config.get('hosts'), self.config.get('ports'))
+        Logger.__init__(self, self.config.get('service'), log_path)
+        self.start = None
+        self.end = None
+        self.categories = self.config.get('categories')
+        self.base_url = self.config.get('base_url')
 
     def date_list(self):
-        return [dt for dt in rrule(MONTHLY, dtstart=self.start, until=self.end)]
+        if self.start is None or self.end is None:
+            return None
+        return [dt for dt in rrule(DAILY, dtstart=self.start, until=self.end)]
 
     def get(self):
         dl = self.date_list()
-        for date in dl:
-            self.get_by_date(date)
+        if dl is None:
+            print("Dates are not set...")
+        else:
+            for date in dl:
+                self.get_by_date(date)
 
-    def get_by_date(self, date):
-        for url in self.urls:
+    def get_by_date(self, curr_date):
+        curr_date = curr_date.strftime('%Y-%m-%d')
+        for category_base, category_name in self.categories.items():
             page = 1
             while True:
-                tmp_url = url.format(str(page), str(date.strftime('%Y-%m-%d')))
+                tmp_url = self.base_url.format(str(page), curr_date, category_base)
                 try:
                     r = self.get_response(tmp_url)
                     if int(r.url[r.url.index("=") + 1:r.url.index("&")]) < page:
@@ -45,50 +41,29 @@ class Earnings(Requester, Logger):
                         # self.to_logger("empty url ->" + tmp_url)
                         break
                     # self.to_logger(tmp_url)
-                    r_map = self.get_response(self.url_map)
-                    self.map = json.loads(r_map.content)
                     print(tmp_url)
                     page += 1
                     try:
                         df = pd.read_html(r.content)
-                        self.processing_dataframe(df, tmp_url)
+                        list_id, list_ernings, list_downloads = self.get_new_data(df, category_name)
                     except ValueError:
                         # self.to_logger(ValueError)
                         print(ValueError)
                         break
+                    self.processing_dataframe(list_id, list_ernings, list_downloads, curr_date, category_name)
                 except():
                     print("error in request")
-                    # self.to_logger("error in request")
 
-    def processing_dataframe(self, df, tmp_url):
+    @staticmethod
+    def get_new_data(df, category):
+        print(category)
         df = df[0]
         list_id = df[df.columns[1]].tolist()  # ID
+        list_ernings = df[df.columns[2]].tolist()  # Earnings
         list_downloads = df[df.columns[3]].tolist()  # Downloads
-        category = self.get_category(tmp_url)
-        for idi, download in zip(list_id, list_downloads):
-            country, city = self.get_location(idi)
-            self.post(idi, download,  country, city, category)
+        return list_id, list_ernings, list_downloads
 
-    def get_category(self, url):
-        for category in self.categories.keys():
-            if category in url:
-                return self.categories.get(category)
-
-    def get_location(self, idi):
-        for location in self.map:
-            media_id = location.get('media_id')
-            if str(media_id) == idi:
-                country = location.get('country')
-                city = location.get('city')
-                if country is None and city is not None:
-                    country = city
-                return country, city
-        return None, None
-
-    def post(self, idi, download,  country, city, category):
-        df = {"idi": idi,
-              "download": download,
-              "category": category,
-              "country": country,
-              "city": city}
-        self.post_request(df)
+    def processing_dataframe(self, list_idi, list_erns, list_dls, curr_date, category):
+        for idi, erns, dls in zip(list_idi, list_erns, list_dls):
+            country, city = None, None
+            self.post_to_api_postgres(curr_date, idi, dls, erns, country, city, category)

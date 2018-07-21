@@ -1,0 +1,17 @@
+service: earnings-history-service
+
+base_url: https://submit.shutterstock.com/earnings/daily?page={}&date={}&language=en&category={}&sort=desc&sorted_by=count&per_page=20
+
+map_url: https://submit.shutterstock.com/api/user/downloads/map
+
+categories:
+  25_a_day: subscription
+  on_demand: onDemand
+  enhanced: enhanced
+  single_image_and_other: single&other
+
+hosts:
+  api-server: api
+
+ports:
+  api-server: 8001
