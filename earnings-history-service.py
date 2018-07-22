@@ -12,16 +12,19 @@ app.debug = True
 
 @app.route("/history/earnings", methods=['GET'])
 def get_data():
-    date = json.loads(request.data)
-    print(date)
-    print(type(date))
-    earnings.start = pd.to_datetime(date.get('Start'))
-    earnings.end = pd.to_datetime(date.get('End'))
+    body = request.data
+    print(body)
+    if len(body) != 0:
+        date = json.loads(body)
+        print(date)
+        print(type(date))
+        earnings.start = pd.to_datetime(date.get('Start'))
+        earnings.end = pd.to_datetime(date.get('End'))
 
     # earnings.start = pd.to_datetime("2018-05-01")
     # earnings.end = pd.to_datetime("2018-06-01")
-    earnings.get()
-    return ""
+        earnings.get()
+    return "body is None"
 
 
 if __name__ == '__main__':

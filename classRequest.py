@@ -59,7 +59,7 @@ class Requester:
 
     def post_to_api_postgres(self, date, idi, download, earnings, country, city, category):
         data = {"idi": idi,
-                "timestamp": date,
+                "date": date,
                 "download": download,
                 "earnings": earnings,
                 "category": category,
@@ -67,8 +67,8 @@ class Requester:
                 "city": city}
         print(data)
 
-        # body = json.dumps(data)
-        # if self.prod == 1:
-        #     self.host = self.hosts.get('api-server')
-        # url = "http://{}:{}/data/psql/earnings".format(self.host, self.ports.get('api-server'))
-        # requests.post(url, data=body)
+        body = json.dumps(data)
+        if self.prod == 1:
+            self.host = self.hosts.get('api-server')
+        url = "http://{}:{}/data/psql/earnings".format(self.host, self.ports.get('api-server'))
+        requests.post(url, data=body)

@@ -975,3 +975,91 @@ The view function did not return a valid response. The return type must be a str
 2018-07-21 19:37:22,008 - werkzeug - INFO -  * Restarting with stat
 2018-07-21 19:37:23,400 - werkzeug - WARNING -  * Debugger is active!
 2018-07-21 19:37:23,430 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:38:41,648 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:38:41,664 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:38:42,227 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:38:42,323 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:44:04,463 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:44:04] "VIEW /history/earnings HTTP/1.1" 405 -
+2018-07-22 12:44:40,944 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:44:40] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:45:48,328 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:45:48,331 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:45:48,898 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:45:49,053 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:45:51,794 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:45:51] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:46:01,993 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:46:01,995 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:46:02,580 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:46:02,594 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:46:06,253 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:46:06] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:46:13,974 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:46:13,975 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:46:14,579 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:46:14,609 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:46:21,082 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:46:21] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:46:36,763 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:46:36,764 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:46:37,377 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:46:37,391 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:46:38,988 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:46:38] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:47:01,492 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:47:01,492 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:47:02,125 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:47:02,158 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:47:03,139 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:47:03] "GET /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:47:22,980 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:47:22,981 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:47:23,549 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:47:23,562 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:47:24,989 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:47:24] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:47:33,738 - werkzeug - INFO -  * Detected change in '/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py', reloading
+2018-07-22 12:47:33,801 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:47:34,427 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:47:34,440 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:48:05,967 - werkzeug - INFO -  * Detected change in '/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py', reloading
+2018-07-22 12:48:06,042 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:48:09,213 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:48:09,241 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:48:16,618 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:48:16,619 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:48:17,221 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:48:17,234 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:48:21,979 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:48:21] "VIEW /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:48:38,577 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:48:38] "VIEW /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:49:15,182 - werkzeug - INFO -  * Detected change in '/Users/orizhiy/PycharmProjects/earnings-history-service/earnings-history-service.py', reloading
+2018-07-22 12:49:15,256 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:49:17,901 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:49:17,937 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:49:24,641 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:49:24] "POST /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:49:32,118 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:49:32,120 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:49:32,685 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:49:32,714 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:49:35,010 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:49:35] "POST /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:50:03,820 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:50:03] "POST /history/earningss HTTP/1.1" 404 -
+2018-07-22 12:50:07,049 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:50:07] "POST /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:50:38,567 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:50:38,569 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:50:39,741 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:50:39,777 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:50:41,817 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:50:41] "POST /history/earnings HTTP/1.1" 500 -
+2018-07-22 12:50:58,687 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:50:58,687 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:50:59,315 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:50:59,329 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:51:01,097 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:51:01] "POST /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:51:23,327 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:51:23,328 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:51:23,909 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:51:23,922 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:51:26,488 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:51:26] "POST /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:52:50,707 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 12:52:50,709 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 12:52:51,296 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 12:52:51,336 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 12:52:57,372 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:52:57] "GET /history/earnings HTTP/1.1" 200 -
+2018-07-22 12:52:57,558 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 12:52:57] "GET /favicon.ico HTTP/1.1" 404 -
+2018-07-22 13:04:33,445 - werkzeug - INFO -  * Running on http://127.0.0.1:8003/ (Press CTRL+C to quit)
+2018-07-22 13:04:33,447 - werkzeug - INFO -  * Restarting with stat
+2018-07-22 13:04:34,201 - werkzeug - WARNING -  * Debugger is active!
+2018-07-22 13:04:34,308 - werkzeug - INFO -  * Debugger PIN: 112-952-218
+2018-07-22 13:07:40,268 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2018 13:07:40] "GET /history/earnings HTTP/1.1" 500 -
